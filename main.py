@@ -1,2 +1,2 @@
-def connexion(bot):
-  bot.connexion(['?'])
+from cogs import start
+start.connexion()
