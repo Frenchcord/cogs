@@ -1,14 +1,14 @@
 from os import listdir
-def apply_cogs(file: str, folder: str = None, *, logs: bool = False):
+def apply_cogs(self, file: str, folder: str = None, *, logs: bool = False):
   if folder is None:
     x = __import__(file)
   else:
     x = __import__(f'{folder}.{file}')
-  eval(f'x.{file}.cogs({bot})')
+  eval(f'x.{file}.cogs({self})')
   del x
-def process_folder(folder: str, *, logs: bool = False, excepte: list = None):
+def process_folder(self, folder: str, *, logs: bool = False, excepte: list = None):
   x = __import__(folder)
-  to_eval: str = f'.cogs({bot})'
+  to_eval: str = f'.cogs({self})'
   if excepte is None:
     if logs is True:
       for i in listdir('./' + folder):
