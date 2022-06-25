@@ -1,8 +1,8 @@
 import frenchcord
 bot = frenchcord.Robot('Token')
 bot.process_folder('cogs', logs=True, excepte=['in_dev'])
-bot.run(['?'])
+bot.connexion(['?'])
 '''
 One line bot method
-import frenchcord; bot = frenchcord.Robot('token'); bot.process_folder('cogs', logs=True, excepte=['in_dev']); bot.run(['?'])
+import frenchcord; bot = frenchcord.Robot('token'); bot.process_folder('cogs', logs=True, excepte=['in_dev']); bot.connexion(['?'])
 '''
