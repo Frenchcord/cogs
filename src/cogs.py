@@ -4,11 +4,11 @@ def apply_cogs(self, file: str, folder: str = None, *, logs: bool = False):
     x = __import__(file)
   else:
     x = __import__(f'{folder}.{file}')
-  eval(f'x.{file}.cogs({self})')
+  eval(f'x.{file}.cogs(self)')
   del x
 def process_folder(self, folder: str, *, logs: bool = False, excepte: list = None):
   x = __import__(folder)
-  to_eval: str = f'.cogs({self})'
+  to_eval: str = f'.cogs(self)'
   if excepte is None:
     if logs is True:
       for i in listdir('./' + folder):
