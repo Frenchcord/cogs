@@ -23,12 +23,14 @@ def process_folder(self, folder: str, *, logs: bool = False, excepte: list = Non
   else:
     if logs is True:
       for i in listdir('./' + folder):
-        if i.endswith('.py') and i[: -3] not in excepte:
-          i = i[: -3]
-          eval(f'x.{i}{to_eval}')
-          print(f'loaded cogs {i}')
+        e = i[: -3]
+        if i.endswith('.py') and e not in excepte:
+          eval(f'x.{e}{to_eval}')
+          print(f'loaded cogs {e}')
     else:
       for i in listdir('./' + folder):
-        if i.endswith('.py') and i[: -3] not in excepte:
-          eval(f'x.{i[: -3]}{to_eval}')
+        e = i[: -3]
+        if i.endswith('.py') and e not in excepte:
+          eval(f'x.{e}{to_eval}')
+    del e
   del x, to_eval
